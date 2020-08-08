@@ -18,9 +18,9 @@
 // get a middleware function that checks for the passed-in role value in the
 // req.decodedJwt.role property. 
 //----------------------------------------------------------------------------//
-function makeCheckRoleMiddleware(role) {
+function makeCheckRoleMiddleware(role_id) {
     return function (req, res, next) {
-        if (req.decodedJwt.role && req.decodedJwt.role === role) {
+        if (req.decodedJwt.role && req.decodedJwt.role === role_id) {
             next();
         } else {
             res.status(403).json({ you: 'do not have the power' });

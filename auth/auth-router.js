@@ -17,13 +17,13 @@ router.post("/register", (req, res) => {
   const credentials = req.body;
 
   if (isValid(credentials)) {
-    const rounds = process.env.BCRYPT_ROUNDS || 8;
+    const rounds = process.env.BCRYPT_ROUNDS;
     const hash = bcryptjs.hashSync(credentials.password, rounds);
     credentials.password = hash;
 
     Users.add(credentials)
       .then(user => {
-        const token = genToken(saved);
+        const token = generateToken(saved);
         res.status(201).json({ data: user, token });
       })
       .catch(error => {
