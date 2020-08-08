@@ -15,3 +15,11 @@ Guided project for **Node Auth 2** Module.
 - [ ] type `npm run server` to start the API.
 
 Please follow along as the instructor adds support for `JSON Web Tokens (JWT)` to the API.
+
+## Files with notes:
+
+- ./auth/auth-router.js
+- ./auth/check-role-middleware.js
+- ./auth/restricted-middleware.js
+- ./config/secrets.js
+- ./users/users-router.js
